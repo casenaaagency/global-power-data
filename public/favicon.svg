@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#08090B" />
+  <!-- the current: a precise vertical trace with a single energized node -->
+  <line x1="16" y1="5" x2="16" y2="27" stroke="#1F3A4F" stroke-width="2" stroke-linecap="round" />
+  <line x1="16" y1="12" x2="16" y2="27" stroke="#8FE3F0" stroke-width="2" stroke-linecap="round" />
+  <circle cx="16" cy="12" r="3.2" fill="#08090B" stroke="#8FE3F0" stroke-width="1.6" />
+  <circle cx="16" cy="12" r="1.2" fill="#8FE3F0" />
+</svg>

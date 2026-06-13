@@ -1,0 +1,5 @@
+/* Global Power Data — style entry.
+   Order matters: tokens define the variables base + sections consume. */
+@import './tokens.css';
+@import './base.css';
+@import './sections.css';

@@ -1,0 +1,88 @@
+/* ============================================================
+   TOKENS — "Cold Current"
+   §4 color system · §5 type system · motion · space
+   A near-black world where light is earned. Cyan is a guest.
+   ============================================================ */
+
+:root {
+  /* ---- Base ---- */
+  --black-0: #08090b; /* deepest base, page background */
+  --black-1: #0c0e11; /* raised surfaces, section shifts */
+  --black-2: #14171b; /* cards, gated panels */
+  --hairline: #1e2329; /* 1px dividers, structure lines */
+
+  /* ---- Text ---- */
+  --bone: #eceae4; /* primary text / wordmark */
+  --bone-dim: #9ba1a8; /* secondary text */
+  --bone-faint: #5a616a; /* captions, footers, labels (non-essential only) */
+
+  /* ---- Accent — used sparingly ---- */
+  --cyan: #8fe3f0; /* the current; hot points; primary CTA */
+  --cyan-soft: #5fb8cc; /* secondary accent, hover states */
+  --steel: #3e7ca8; /* deeper accent, gradients, depth */
+  --steel-deep: #1f3a4f; /* near-background accent, field glints */
+
+  /* ---- Functional ---- */
+  --glow-cyan: rgba(143, 227, 240, 0.14); /* bloom / ambient light */
+  --glow-cyan-strong: rgba(143, 227, 240, 0.34);
+  --focus-ring: #8fe3f0;
+
+  /* Translucent surfaces for glass-thin panels */
+  --surface-veil: rgba(12, 14, 17, 0.72);
+  --hairline-bright: rgba(143, 227, 240, 0.18);
+
+  /* ---- Type families ---- */
+  --font-display: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui,
+    -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
+    Roboto, Helvetica, Arial, sans-serif;
+
+  /* ---- Fluid type scale (§5) ---- */
+  --step-hero: clamp(3rem, 8vw, 8rem);
+  --step-h1: clamp(2rem, 4.5vw, 3.5rem);
+  --step-h2: clamp(1.4rem, 2.6vw, 2.1rem);
+  --step-pull: clamp(1.75rem, 4vw, 3.25rem);
+  --step-stat: clamp(2.25rem, 5.5vw, 4.5rem);
+  --step-body: clamp(1rem, 1.1vw, 1.15rem);
+  --step-lede: clamp(1.15rem, 1.5vw, 1.4rem);
+  --step-label: 0.8125rem;
+
+  --tracking-wordmark: 0.34em;
+  --tracking-label: 0.18em;
+  --tracking-tight: -0.02em;
+  --tracking-tighter: -0.035em;
+  --leading-tight: 1.04;
+  --leading-snug: 1.18;
+  --leading-body: 1.62;
+
+  /* ---- Space & layout ---- */
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+  --measure: 1280px;
+  --measure-narrow: 760px;
+  --section-pad: clamp(6rem, 15vh, 13rem);
+  --rhythm: clamp(1.25rem, 2.4vw, 2.25rem);
+  --header-h: 4.75rem;
+
+  /* ---- Motion — weighted, inevitable; nothing bouncy ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* primary reveal — expo settle */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1); /* POWER + number focus-resolve */
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1); /* symmetrical, machined chrome */
+  --ease-current: cubic-bezier(0.62, 0.01, 0.2, 1); /* the route's time-based motion */
+  --ease-settle: cubic-bezier(0.33, 1, 0.68, 1); /* coming-to-rest, no overshoot */
+
+  --dur-fast: 0.32s;
+  --dur-base: 0.6s;
+  --dur-slow: 0.8s;
+  --dur-reveal: 0.72s;
+
+  --reveal-distance: 1.4rem;
+
+  color-scheme: dark;
+}
+
+/* The current can be globally suppressed (reduced-motion / low-power) by
+   flipping these two without touching component CSS. */
+:root {
+  --field-opacity: 1;
+  --bloom-opacity: 1;
+}

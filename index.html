@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#08090B" />
+
+    <!-- Swap the static-fallback baseline for the enhanced experience the moment
+         we know JS is alive. Runs before paint, so there is no flash. -->
+    <script>
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('js');
+    </script>
+
+    <title>Global Power Data — The Architecture of Power</title>
+    <meta
+      name="description"
+      content="Financial architecture for community-scale energy infrastructure. Global Power Data makes clean-energy infrastructure financeable, compliant, and replicable."
+    />
+    <meta name="author" content="Global Power Data, LLC" />
+    <link rel="canonical" href="https://globalpowerdata.com/" />
+
+    <!-- Open Graph / social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Global Power Data" />
+    <meta property="og:title" content="Global Power Data — The Architecture of Power" />
+    <meta
+      property="og:description"
+      content="Financial architecture for community-scale energy infrastructure."
+    />
+    <meta property="og:url" content="https://globalpowerdata.com/" />
+    <meta property="og:image" content="https://globalpowerdata.com/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Global Power Data — The Architecture of Power" />
+    <meta
+      name="twitter:description"
+      content="Financial architecture for community-scale energy infrastructure."
+    />
+    <meta name="twitter:image" content="https://globalpowerdata.com/og.png" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="mask-icon" href="/favicon.svg" color="#8FE3F0" />
+
+    <!-- Type. System fallbacks below keep the composition intentional offline. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    />
+
+    <!-- Linked (not JS-imported) so the semantic layer is fully styled with zero JS. -->
+    <link rel="stylesheet" href="/src/styles/index.css" />
+
+    <script type="module" src="/src/main.ts"></script>
+
+    <!-- Organization schema for crawlers. Facts only; nothing implied. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Global Power Data, LLC",
+        "alternateName": "GPD",
+        "url": "https://globalpowerdata.com/",
+        "description": "Financial architecture for community-scale energy infrastructure. GPD makes clean-energy infrastructure financeable, compliant, and replicable.",
+        "email": "contact@globalpowerdata.com",
+        "slogan": "The architecture of power."
+      }
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="site-header__inner container">
+        <a class="wordmark" href="#hero" aria-label="Global Power Data — top of page">
+          <span class="wordmark__mark" aria-hidden="true"></span>
+          <span class="wordmark__full">Global&nbsp;Power&nbsp;Data</span>
+          <span class="wordmark__compact" aria-hidden="true">GPD</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a class="site-nav__link" href="#contact">Begin a conversation</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ===================== HERO ===================== -->
+      <section class="hero" id="hero" aria-labelledby="hero-title">
+        <!-- Enhancement layers (field canvas + current) are mounted here by JS.
+             The static composition below is the no-JS / no-WebGL baseline. -->
+        <div class="hero__stage" data-hero-stage aria-hidden="true">
+          <div class="hero__static" data-hero-static>
+            <svg
+              class="hero__static-current"
+              viewBox="0 0 1440 900"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+              aria-hidden="true"
+            >
+              <path
+                class="hero__static-trace"
+                d="M-60 596 H452 L536 512 H904 L984 592 H1520"
+                pathLength="100"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <div class="hero__content container">
+          <p class="hero__eyebrow eyebrow">Global Power Data</p>
+          <h1 class="hero__headline" id="hero-title" data-headline>
+            <span class="word">The</span>
+            <span class="word">Architecture</span>
+            <span class="word">of</span>
+            <span class="word word--power" data-power>Power</span>
+          </h1>
+          <p class="hero__subhead" data-subhead>
+            Financial architecture for community-scale energy infrastructure.
+          </p>
+        </div>
+
+        <a class="hero__scroll" href="#thesis" data-scroll-cue>
+          <span class="hero__scroll-label">Scroll</span>
+          <span class="hero__scroll-line" aria-hidden="true"></span>
+        </a>
+      </section>
+
+      <!-- ===================== THE THESIS ===================== -->
+      <section class="section section--thesis" id="thesis" aria-labelledby="thesis-title">
+        <div class="container">
+          <p class="eyebrow" data-reveal>The inflection point</p>
+          <h2 class="statement" id="thesis-title" data-reveal>
+            The grid can no longer keep pace — and the most favorable incentive
+            environment in the history of clean energy is open now. That
+            convergence is the opportunity.
+          </h2>
+
+          <ul class="figures" data-reveal-group>
+            <li class="figure" data-reveal>
+              <span class="figure__value tnum">
+                <span data-count-to="1200" data-count-suffix="+">1,200+</span>
+                <span class="figure__unit">GW</span>
+              </span>
+              <span class="figure__label">pending interconnection</span>
+            </li>
+            <li class="figure" data-reveal>
+              <span class="figure__value tnum">4&ndash;7<span class="figure__unit">yrs</span></span>
+              <span class="figure__label">typical PPA wait</span>
+            </li>
+            <li class="figure" data-reveal>
+              <span class="figure__value figure__value--text">A closing window</span>
+              <span class="figure__label">on federal incentives</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===================== WHAT GPD DOES ===================== -->
+      <section class="section section--reframe" id="what-we-do" aria-labelledby="what-title">
+        <div class="container container--narrow">
+          <p class="eyebrow" data-reveal>What we do</p>
+          <h2 class="statement statement--lead" id="what-title" data-reveal>
+            We are not a solar developer. We are the
+            <em>financial architecture</em> that makes community-scale energy
+            infrastructure financeable, compliant, and replicable.
+          </h2>
+          <p class="prose" data-reveal>
+            GPD integrates federal and state credit structures, grant compliance,
+            community-benefit qualification, and on-the-ground development into a
+            single, repeatable model — assembled from two decades of work where
+            these disciplines actually meet.
+          </p>
+        </div>
+      </section>
+
+      <!-- ================= HOW VALUE IS CREATED ================= -->
+      <section class="section section--stack" id="credit-architecture" aria-labelledby="stack-title">
+        <div class="container">
+          <p class="eyebrow" data-reveal>The credit architecture</p>
+          <h2 class="statement" id="stack-title" data-reveal>
+            From a 30% base to a 50&ndash;60% effective rate.
+          </h2>
+
+          <ol class="stack" data-stack data-reveal-group>
+            <li class="stack__step" data-reveal data-stack-step style="--target: 30%">
+              <span class="stack__head">
+                <span class="stack__code">§48E</span>
+                <span class="stack__name">Base credit</span>
+              </span>
+              <span class="stack__bar" aria-hidden="true"><span class="stack__fill"></span></span>
+              <span class="stack__value tnum"><span data-count-to="30" data-count-suffix="%">30%</span></span>
+            </li>
+            <li class="stack__step" data-reveal data-stack-step style="--target: 40%">
+              <span class="stack__head">
+                <span class="stack__code">Adder</span>
+                <span class="stack__name">Energy Community</span>
+              </span>
+              <span class="stack__bar" aria-hidden="true"><span class="stack__fill"></span></span>
+              <span class="stack__value tnum">+10<span class="stack__unit">pp</span></span>
+            </li>
+            <li class="stack__step" data-reveal data-stack-step style="--target: 55%">
+              <span class="stack__head">
+                <span class="stack__code">Adder</span>
+                <span class="stack__name">Low-Income</span>
+              </span>
+              <span class="stack__bar" aria-hidden="true"><span class="stack__fill"></span></span>
+              <span class="stack__value tnum">+10&ndash;20<span class="stack__unit">pp</span></span>
+            </li>
+            <li class="stack__step stack__step--result" data-reveal data-stack-step style="--target: 55%">
+              <span class="stack__head">
+                <span class="stack__code stack__code--cyan">Effective</span>
+                <span class="stack__name">Total credit rate</span>
+              </span>
+              <span class="stack__bar" aria-hidden="true"><span class="stack__fill stack__fill--cyan"></span></span>
+              <span class="stack__value stack__value--cyan tnum">50&ndash;60%</span>
+            </li>
+          </ol>
+
+          <p class="stack__footnote" data-reveal>
+            §45Q carbon-capture credits apply as a parallel stream where in scope.
+          </p>
+        </div>
+      </section>
+
+      <!-- ================= THE MODEL — THREE TRACKS ================= -->
+      <section class="section section--model" id="the-model" aria-labelledby="model-title">
+        <div class="container">
+          <p class="eyebrow" data-reveal>The model</p>
+          <h2 class="statement" id="model-title" data-reveal>Three tracks. One partnership.</h2>
+
+          <ol class="tracks" data-reveal-group>
+            <li class="track" data-reveal>
+              <span class="track__num tnum" aria-hidden="true">01</span>
+              <h3 class="track__name">IP Partnership</h3>
+              <p class="track__desc">Access to the framework itself.</p>
+            </li>
+            <li class="track" data-reveal>
+              <span class="track__num tnum" aria-hidden="true">02</span>
+              <h3 class="track__name">Project Management</h3>
+              <p class="track__desc">GPD as principal on the ground.</p>
+            </li>
+            <li class="track" data-reveal>
+              <span class="track__num tnum" aria-hidden="true">03</span>
+              <h3 class="track__name">Per-Project Royalty</h3>
+              <p class="track__desc">The model as it replicates.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============= WHY THIS CANNOT BE REPLICATED ============= -->
+      <section class="section section--why" id="the-case" aria-labelledby="why-title">
+        <div class="container container--narrow">
+          <p class="eyebrow" data-reveal>The case for GPD</p>
+          <h2 class="pull pull__line" id="why-title" data-reveal>
+            You can engage expertise.<br />You cannot engage
+            <em>perspective.</em>
+          </h2>
+          <p class="prose" data-reveal>
+            The framework's value is inseparable from the judgment that built it —
+            anticipating where this market was going before it arrived, and knowing
+            how infrastructure actually gets permitted, financed, and built.
+          </p>
+
+          <ul class="pillars" data-reveal-group>
+            <li class="pillar" data-reveal>
+              <span class="pillar__lead">Two decades</span>
+              <span class="pillar__rest">at the intersection of energy policy and finance</span>
+            </li>
+            <li class="pillar" data-reveal>
+              <span class="pillar__lead">Grant compliance</span>
+              <span class="pillar__rest">at scale</span>
+            </li>
+            <li class="pillar" data-reveal>
+              <span class="pillar__lead">Heavy-civil reality</span>
+              <span class="pillar__rest">not models</span>
+            </li>
+            <li class="pillar" data-reveal>
+              <span class="pillar__lead">Community relationships</span>
+              <span class="pillar__rest">that make qualification real</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===================== PROOF / STANDING ===================== -->
+      <section class="section section--standing" id="standing" aria-labelledby="standing-title">
+        <div class="container container--narrow">
+          <p class="eyebrow" data-reveal>Standing</p>
+          <h2 class="statement statement--lead" id="standing-title" data-reveal>
+            Built where the disciplines actually meet.
+          </h2>
+          <p class="prose" data-reveal>
+            Our judgment is grounded in regional development experience across the
+            disciplines this work demands — energy policy and finance, grant
+            compliance, heavy-civil execution, and the community relationships that
+            determine whether projects qualify and get built. Details are discussed
+            directly, in confidence.
+          </p>
+        </div>
+      </section>
+
+      <!-- ================= BEGIN A CONVERSATION ================= -->
+      <section class="section section--contact" id="contact" aria-labelledby="contact-title">
+        <div class="container container--narrow">
+          <p class="eyebrow" data-reveal>Private inquiry</p>
+          <h2 class="statement" id="contact-title" data-reveal>Begin a conversation.</h2>
+          <p class="prose" data-reveal>
+            GPD works with a limited set of capital partners. Introductions are
+            handled directly and in confidence.
+          </p>
+
+          <form
+            class="inquiry"
+            data-inquiry
+            action="https://formspree.io/f/your-endpoint"
+            method="POST"
+            novalidate
+            data-reveal
+          >
+            <div class="field">
+              <label class="field__label" for="f-name">Name</label>
+              <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label class="field__label" for="f-firm">Firm</label>
+              <input class="field__input" id="f-firm" name="firm" type="text" autocomplete="organization" required />
+            </div>
+            <div class="field">
+              <label class="field__label" for="f-email">Email</label>
+              <input class="field__input" id="f-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field field--full">
+              <label class="field__label" for="f-message">Message</label>
+              <textarea class="field__input field__textarea" id="f-message" name="message" rows="3"></textarea>
+            </div>
+
+            <div class="inquiry__actions field--full">
+              <button class="btn btn--cyan" type="submit">
+                <span class="btn__label">Request a conversation</span>
+              </button>
+              <p class="inquiry__microcopy">Confidential. We respond personally.</p>
+            </div>
+
+            <p class="inquiry__status" data-inquiry-status role="status" aria-live="polite"></p>
+
+            <noscript>
+              <p class="inquiry__fallback">
+                Or write to us directly at
+                <a href="mailto:contact@globalpowerdata.com">contact@globalpowerdata.com</a>.
+              </p>
+            </noscript>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p class="site-footer__mark">Global Power Data, LLC</p>
+        <p class="site-footer__meta">
+          <a class="site-footer__email" href="mailto:contact@globalpowerdata.com">contact@globalpowerdata.com</a>
+          <span class="site-footer__sep" aria-hidden="true">·</span>
+          <span class="site-footer__confidential">Confidential — by invitation</span>
+        </p>
+        <p class="site-footer__copy">© <span data-year>2026</span> Global Power Data, LLC. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

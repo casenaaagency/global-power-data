@@ -1,0 +1,474 @@
+/* ============================================================
+   SECTIONS — one idea per screen, restraint of message
+   ============================================================ */
+
+.section {
+  position: relative;
+  padding-block: var(--section-pad);
+  z-index: 1;
+}
+/* Quiet tonal shifts between ideas — never hard cuts. */
+.section--reframe,
+.section--model,
+.section--standing {
+  background: linear-gradient(180deg, var(--black-0), var(--black-1) 22%, var(--black-1) 78%, var(--black-0));
+}
+
+/* Shared statement / prose voice */
+.statement {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--step-h1);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--bone);
+  max-width: 22ch;
+  text-wrap: balance;
+  margin-top: clamp(1.4rem, 3vw, 2.4rem);
+}
+.statement--lead {
+  max-width: 26ch;
+}
+.statement em,
+.pull__line em {
+  font-style: normal;
+  color: var(--cyan-soft);
+}
+
+.prose {
+  margin-top: clamp(1.4rem, 3vw, 2.2rem);
+  max-width: 56ch;
+  font-size: var(--step-lede);
+  line-height: 1.62;
+  color: var(--bone-dim);
+}
+
+/* ============================================================
+   THE THESIS — one statement + three quiet figures
+   ============================================================ */
+.section--thesis .statement {
+  max-width: 30ch;
+}
+.figures {
+  list-style: none;
+  padding: 0;
+  margin-top: clamp(3rem, 7vw, 5.5rem);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  border-top: 1px solid var(--hairline);
+  padding-top: clamp(2rem, 4vw, 3rem);
+}
+.figure {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.figure__value {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--step-stat);
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+  color: var(--bone);
+  display: flex;
+  align-items: baseline;
+  gap: 0.3em;
+}
+.figure__value--text {
+  font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+  font-weight: 500;
+}
+.figure__unit {
+  font-size: 0.36em;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--bone-faint);
+}
+.figure__label {
+  font-size: var(--step-label);
+  letter-spacing: 0.02em;
+  color: var(--bone-dim);
+}
+
+/* ============================================================
+   HOW VALUE IS CREATED — the credit stack
+   ============================================================ */
+.stack {
+  list-style: none;
+  padding: 0;
+  margin-top: clamp(2.75rem, 6vw, 4.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.stack__step {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(120px, 38%) auto;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  padding: clamp(1.1rem, 2.4vw, 1.7rem) clamp(1.25rem, 3vw, 2.25rem);
+  background: var(--black-1);
+}
+.stack__step--result {
+  background: linear-gradient(90deg, var(--black-2), rgba(31, 58, 79, 0.18));
+}
+.stack__head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+.stack__code {
+  font-family: var(--font-display);
+  font-size: var(--step-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bone-faint);
+}
+.stack__code--cyan {
+  color: var(--cyan-soft);
+}
+.stack__name {
+  font-size: 1.02rem;
+  color: var(--bone);
+}
+.stack__bar {
+  position: relative;
+  height: 4px;
+  border-radius: 4px;
+  background: rgba(94, 102, 110, 0.16);
+  overflow: hidden;
+}
+.stack__fill {
+  position: absolute;
+  inset: 0;
+  width: var(--target, 0%);
+  transform-origin: left center;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, var(--steel-deep), var(--steel));
+  transition: transform 1s var(--ease-out);
+}
+.stack__fill--cyan {
+  background: linear-gradient(90deg, var(--steel), var(--cyan));
+  box-shadow: 0 0 18px var(--glow-cyan);
+}
+.js .stack__step[data-stack-step].is-visible .stack__fill {
+  transform: scaleX(1);
+}
+.stack__value {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+  letter-spacing: var(--tracking-tight);
+  color: var(--bone);
+  text-align: right;
+  white-space: nowrap;
+}
+.stack__value--cyan {
+  color: var(--cyan);
+  text-shadow: 0 0 24px var(--glow-cyan);
+}
+.stack__unit {
+  font-size: 0.5em;
+  color: var(--bone-faint);
+  margin-left: 0.15em;
+}
+.stack__footnote {
+  margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-size: var(--step-label);
+  color: var(--bone-faint);
+  letter-spacing: 0.01em;
+}
+
+/* ============================================================
+   THE MODEL — three tracks
+   ============================================================ */
+.tracks {
+  list-style: none;
+  padding: 0;
+  margin-top: clamp(3rem, 7vw, 5rem);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.track {
+  position: relative;
+  background: var(--black-1);
+  padding: clamp(1.75rem, 3vw, 2.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  min-height: clamp(13rem, 22vw, 17rem);
+  transition: background-color var(--dur-base) var(--ease-out);
+}
+.track::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: var(--cyan-soft);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+.track:hover {
+  background: var(--black-2);
+}
+.track:hover::before {
+  transform: scaleX(1);
+}
+.track__num {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--bone-faint);
+}
+.track__name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  letter-spacing: var(--tracking-tight);
+  color: var(--bone);
+  margin-top: auto;
+}
+.track__desc {
+  font-size: 1rem;
+  color: var(--bone-dim);
+  max-width: 26ch;
+}
+
+/* ============================================================
+   WHY THIS CANNOT BE REPLICATED
+   ============================================================ */
+.pull {
+  margin: clamp(1.5rem, 4vw, 3rem) 0 0;
+  border: 0;
+  padding: 0;
+}
+.pull__line {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--step-pull);
+  line-height: 1.12;
+  letter-spacing: var(--tracking-tight);
+  color: var(--bone);
+  text-wrap: balance;
+}
+.pillars {
+  list-style: none;
+  padding: 0;
+  margin-top: clamp(3rem, 7vw, 5rem);
+  display: flex;
+  flex-direction: column;
+}
+.pillar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem 0.85rem;
+  padding-block: clamp(1.1rem, 2.4vw, 1.6rem);
+  border-top: 1px solid var(--hairline);
+  font-size: var(--step-lede);
+}
+.pillar:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+.pillar__lead {
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--bone);
+  letter-spacing: var(--tracking-tight);
+}
+.pillar__rest {
+  color: var(--bone-dim);
+}
+
+/* ============================================================
+   BEGIN A CONVERSATION — the contact gate
+   ============================================================ */
+.section--contact {
+  background: linear-gradient(180deg, var(--black-0), #070809);
+}
+.inquiry {
+  margin-top: clamp(2.5rem, 5vw, 3.75rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.field--full {
+  grid-column: 1 / -1;
+}
+.field__label {
+  font-family: var(--font-display);
+  font-size: var(--step-label);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bone-faint);
+}
+.field__input {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  color: var(--bone);
+  background: var(--black-2);
+  border: 1px solid var(--hairline);
+  border-radius: 2px;
+  padding: 0.95rem 1.05rem;
+  transition: border-color var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out),
+    background-color var(--dur-base) var(--ease-out);
+}
+.field__input::placeholder {
+  color: var(--bone-faint);
+}
+.field__input:hover {
+  border-color: #2a3138;
+}
+.field__input:focus-visible {
+  outline: none;
+  border-color: var(--cyan-soft);
+  box-shadow: 0 0 0 1px var(--cyan-soft), 0 0 30px var(--glow-cyan);
+  background: #121519;
+}
+.field__textarea {
+  resize: vertical;
+  min-height: 3.5rem;
+}
+.field__input[aria-invalid='true'] {
+  border-color: #b66;
+  box-shadow: 0 0 0 1px rgba(190, 100, 100, 0.4);
+}
+
+.inquiry__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+.inquiry__microcopy {
+  font-size: var(--step-label);
+  color: var(--bone-faint);
+  letter-spacing: 0.02em;
+}
+.inquiry__status {
+  grid-column: 1 / -1;
+  min-height: 1.4em;
+  font-size: var(--step-label);
+  color: var(--cyan-soft);
+  letter-spacing: 0.02em;
+}
+.inquiry__status[data-state='error'] {
+  color: #d98c8c;
+}
+.inquiry__fallback {
+  grid-column: 1 / -1;
+  color: var(--bone-dim);
+}
+.inquiry__fallback a {
+  color: var(--cyan-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  border-top: 1px solid var(--hairline);
+  padding-block: clamp(2.5rem, 5vw, 3.5rem);
+  background: var(--black-0);
+}
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+}
+.site-footer__mark {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bone-dim);
+}
+.site-footer__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  font-size: var(--step-label);
+  color: var(--bone-faint);
+}
+.site-footer__email {
+  color: var(--bone-dim);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.site-footer__email:hover {
+  color: var(--cyan-soft);
+}
+.site-footer__copy {
+  width: 100%;
+  font-size: var(--step-label);
+  color: var(--bone-faint);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 860px) {
+  .figures {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .tracks {
+    grid-template-columns: 1fr;
+  }
+  .track {
+    min-height: 0;
+  }
+  .track__name {
+    margin-top: 0.4rem;
+  }
+  .stack__step {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'head value'
+      'bar bar';
+    row-gap: 0.9rem;
+  }
+  .stack__head {
+    grid-area: head;
+  }
+  .stack__value {
+    grid-area: value;
+  }
+  .stack__bar {
+    grid-area: bar;
+  }
+  .inquiry {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .site-nav {
+    display: none; /* wordmark + the in-page CTA carry it on small screens */
+  }
+}

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <defs>
+    <radialGradient id="depth" cx="72%" cy="6%" r="80%">
+      <stop offset="0%" stop-color="#1F3A4F" stop-opacity="0.30"/>
+      <stop offset="55%" stop-color="#0C0E11" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bloom" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8FE3F0" stop-opacity="0.22"/>
+      <stop offset="70%" stop-color="#8FE3F0" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="#08090B"/>
+  <rect width="1200" height="630" fill="url(#depth)"/>
+
+  <!-- drifting field (texture) -->
+  <g fill="#1F3A4F">
+    <circle cx="120" cy="110" r="1.4"/><circle cx="300" cy="70" r="1"/><circle cx="520" cy="140" r="1.2"/>
+    <circle cx="760" cy="95" r="1"/><circle cx="980" cy="160" r="1.4"/><circle cx="1090" cy="80" r="1"/>
+    <circle cx="180" cy="520" r="1.2"/><circle cx="420" cy="560" r="1"/><circle cx="650" cy="500" r="1.3"/>
+    <circle cx="900" cy="540" r="1"/><circle cx="1050" cy="470" r="1.2"/><circle cx="240" cy="300" r="1"/>
+    <circle cx="1130" cy="320" r="1.2"/><circle cx="60" cy="380" r="1"/>
+  </g>
+  <g fill="#5FB8CC">
+    <circle cx="610" cy="350" r="1.6" opacity="0.6"/><circle cx="690" cy="300" r="1.3" opacity="0.5"/>
+  </g>
+
+  <!-- bloom where the current resolves on POWER -->
+  <ellipse cx="320" cy="372" rx="300" ry="210" fill="url(#bloom)"/>
+
+  <!-- the route -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-20 300 H150 L190 362 H1220" stroke="#1F3A4F" stroke-width="1.4" opacity="0.7"/>
+    <path d="M-20 300 H150 L190 362 H430" stroke="#8FE3F0" stroke-width="2.2" filter="url(#glow)"/>
+  </g>
+  <circle cx="430" cy="362" r="4.5" fill="#ECEAE4"/>
+  <circle cx="430" cy="362" r="9" fill="none" stroke="#8FE3F0" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- wordmark -->
+  <g transform="translate(72,64)">
+    <rect x="0" y="-9" width="2" height="22" fill="#1F3A4F"/>
+    <circle cx="1" cy="-4" r="3.4" fill="#8FE3F0"/>
+    <text x="22" y="5" fill="#ECEAE4" font-size="17" font-weight="500" letter-spacing="6">GLOBAL POWER DATA</text>
+  </g>
+
+  <!-- hero line -->
+  <text x="70" y="312" fill="#ECEAE4" font-size="70" font-weight="700" letter-spacing="-1.5">THE ARCHITECTURE</text>
+  <text x="70" y="388" font-size="70" font-weight="700" letter-spacing="-1.5">
+    <tspan fill="#ECEAE4">OF </tspan><tspan fill="#8FE3F0" filter="url(#glow)">POWER</tspan>
+  </text>
+
+  <!-- subhead -->
+  <text x="72" y="452" fill="#9BA1A8" font-size="24" font-weight="400">Financial architecture for community-scale energy infrastructure.</text>
+</svg>
